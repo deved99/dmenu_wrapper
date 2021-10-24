@@ -1,4 +1,4 @@
-use std::env;
+use std::env::{self,args};
 use std::process::Command;
 
 const FOREGROUND: &str = env!("COLOR_FG");
@@ -6,12 +6,17 @@ const BACKGROUND: &str = env!("COLOR_BG");
 const ACCENT: &str = env!("COLOR_A");
 
 fn main() {
+    let a: Vec<String> = args().collect();
+    let s = match a.get(1) {
+        Some(s) => s,
+        None => ""
+    };
     match Command::new("bemenu")
         .args(&[
               "--ignorecase",
               "--list=10", "--bottom",
               "--fn", "Noto Sans 15",
-              "-p", "",
+              "-p", s,
               "--tb", ACCENT,    // Title background.
               "--tf", BACKGROUND,    // Title foreground.
               "--fb", ACCENT,    // Filter background.
