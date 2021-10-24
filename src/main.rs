@@ -11,6 +11,7 @@ fn main() {
               "--ignorecase",
               "--list=10", "--bottom",
               "--fn", "Noto Sans 15",
+              "-p", "",
               "--tb", ACCENT,    // Title background.
               "--tf", BACKGROUND,    // Title foreground.
               "--fb", ACCENT,    // Filter background.
