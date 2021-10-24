@@ -1,4 +1,4 @@
-use std::env::{self,args};
+use std::env::args;
 use std::process::Command;
 
 const FOREGROUND: &str = env!("COLOR_FG");
